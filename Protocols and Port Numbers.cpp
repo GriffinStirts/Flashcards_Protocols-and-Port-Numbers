@@ -5,6 +5,9 @@
 #include <sstream>
 #include <cctype>
 
+
+
+// Boolean for checking user input is number
 bool isNumeric(const std::string& str) {
     for (char c : str) {
         if (!std::isdigit(c) && c != '-') {
@@ -14,6 +17,7 @@ bool isNumeric(const std::string& str) {
     return true;
 }
 
+// Boolean for checking user input is character
 bool isAlphabetic(const std::string& str) {
     for (char c : str) {
         if (!std::isalpha(c)) {
@@ -32,8 +36,8 @@ int stringToInt(const std::string& str) {
 
 int main() {
     // Arrays holding protocol names and their corresponding port numbers
-    const char* protocols[] = { "HTTP", "HTTPS", "FTP", "SSH", "Telnet", "SMTP", "DNS" };
-    const char* ports[] = { "80", "443", "21", "22", "23", "25", "53" };
+    const char* protocols[] = { "HTTP", "HTTPS", "FTP", "SSH", "Telnet", "SMTP", "DNS", "SNMP", "DHCP", "NTP", "RDP", "SFTP" };
+    const char* ports[] = { "80", "443", "21", "22", "23", "25", "53", "161", "67/68", "123", "3389", "22" };
 
     // Determine the size of the arrays
     int size = sizeof(protocols) / sizeof(protocols[0]);
@@ -123,7 +127,7 @@ int main() {
                         std::cout << "OK now this is just embarrassing..." << std::endl;
                     }
                     if (attempts > 12) {
-                        std::cout << "You know what, we actually feel bad for ya little fella.. here just take the friggin answer.. we'll give it to ya.. not that it'll make any difference xD " << modeName << " = " << correctAnswer << std::endl;
+                        std::cout << "You know what, we actually feel bad for ya little fella.. here just take the friggin answer.. we'll give it to ya.. just stop spamming! " << modeName << " = " << correctAnswer << std::endl;
                     }
                 }
             }
